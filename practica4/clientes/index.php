@@ -10,7 +10,7 @@ $usuario = new usuario();?>
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Home - Ninja Admin Template</title>
+    <title>Clientes Registrados</title>
 
     <!-- Main Styles -->
     <link rel="stylesheet" href="../../ninja/dark/assets/styles/style.min.css">
@@ -101,6 +101,15 @@ $usuario = new usuario();?>
 <!-- /#message-popup -->
 <div id="wrapper">
     <div class="main-content">
+        <div class="row">
+            <div class="col-lg-10">
+                <h2>Clientes Registrados</h2>
+            </div>
+            <div class="col-lg-2">
+                <a href="../clientes/create.php" class="btn btn-primary"><i class="fa fa-user-plus"></i> Registrar</a>
+            </div>
+        </div>
+        <hr>
         <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>

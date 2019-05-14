@@ -10,7 +10,7 @@ $usuario = new usuario();?>
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Registrar Clientes</title>
+    <title>Editar Usuario</title>
 
     <!-- Main Styles -->
     <link rel="stylesheet" href="../../ninja/dark/assets/styles/style.min.css">
@@ -105,16 +105,16 @@ $usuario = new usuario();?>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10">
-                        <h2>Registro de Clientes</h2>
+                        <h2>Editar Cliente</h2>
                     </div>
                     <div class="col-lg-2">
                         <a href="index.php" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Regresar</a>
                     </div>
                 </div>
                 <hr>
-                <?php $usuario->formularioCrear(); 
-                    if (isset($_POST["Guardar"])) {
-                        $usuario->insertar();
+                <?php
+                    if (isset($_GET["id"])) {
+                        $usuario->editar();
                     }
                 ?>
             </div>
