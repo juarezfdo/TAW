@@ -30,7 +30,7 @@
 		                <td>".$row["direccion"]."</td>
 		                <td>".$row["correo_electronico"]."</td>
 		                <td><a class='btn btn-warning fa fa-edit' href = '../clientes/edit.php?id=".$row['id']."'</a> 
-						<a class='btn btn-danger fa fa-trash' data-toggle='modal' data-nombre='nombre' data-target='#eliminar_registro'</a></td>
+						 <a class='btn btn-danger fa fa-trash' href='../clientes./delete.php?id=".$row['id']."'</a></td>
 		            </tr>
 			        ";
 			    }
@@ -202,7 +202,34 @@
 		}
 
 		function eliminar(){
-			
+			$servername = "localhost";
+			$username = "root";
+			$password = "";
+			$dbname = "tuto_poo";
+			if ($_GET["id"]) {
+				$id = $_GET["id"];
+			}
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+
+			// Check connection
+			if ($conn->connect_error) {
+			    die("Connection failed: " . $conn->connect_error);
+			} 
+			$sql = "delete from clientes WHERE id = {$id}  ;";
+			if($conn->query($sql) === TRUE){
+				
+			}else{
+				 echo "Error: " . $sql . "<br>" . $conn->error;
+			}
+			if ($conn->query($sql) === TRUE) {
+		      echo'<script type="text/javascript">
+		        alert("Eliminado con Exito");
+		        window.location.href="index.php";
+		        </script>';
+		      echo "Eliminado con Exito";
+		    }
+
 		}
 	}
  ?>
